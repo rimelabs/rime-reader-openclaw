@@ -223,13 +223,14 @@ The script prints the path to the generated `.ogg` file.
 - `--voice VOICE` — Rime voice ID (default: `atrium`). Always pass the voice
   the user selected. In podcast mode, set per segment in the JSON.
 - `--speed SPEED` — Speed multiplier (default: `1.0`)
-- `--lang LANG` — Language code for non-English text (e.g. `fra`, `spa`)
+- `--lang LANG` — Language tag for non-English text (e.g. `fr`, `es`). Each Coda
+  voice speaks one language, so pair it with a voice in that language.
 - `--pause SECS` — Silence between chunks or segments in seconds
   (default: `0.3`; use `0.4` for podcast mode to give speaker turns more room)
 - `--segments JSON` — Multi-voice JSON array (podcast mode)
 - `--text TEXT` — Inline text to speak (single short utterance)
 
-**Model:** always `arcana`. There is no `--model` flag.
+**Model:** always `coda`. There is no `--model` flag.
 
 ## Comparison mode
 
@@ -244,12 +245,13 @@ text and return both MEDIA directives with labels:
     MEDIA: /path/to/openai.ogg
     [[audio_as_voice]]
 
-## Available voices (Arcana model)
+## Available voices (Coda model)
 
 Recommended: `atrium` (default), `lyra`, `transom`, `parapet`, `fern`,
 `thalassa`, `truss`, `sirius`, `eliphas`, `lintel`
 
-Full list: luna, lyra, astra, mars, sirius, vespera, estelle, moss, fern,
+Full list: luna, lyra, astra, sirius, vespera, estelle, moss, fern,
 walnut, bond, arcade, albion, truss, stucco, transom, pilaster, masonry,
 oculus, lintel, atrium, cupola, parapet, eliphas, eucalyptus, marlu, vashti
-(and many more — see `rime-tts` skill for the full Arcana English voice list).
+(and many more; see the [Coda voice catalog](https://docs.rime.ai/docs/voices-coda)
+for every English voice).

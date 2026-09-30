@@ -45,7 +45,7 @@ def chunk_text(text: str, size: int = CHUNK_SIZE) -> list:
     return chunks
 
 
-def synthesize(text, voice, speed, lang, api_key, model="arcana"):
+def synthesize(text, voice, speed, lang, api_key, model="coda"):
     """Call Rime TTS API and return raw PCM bytes."""
     body = {
         "text": text,
@@ -119,7 +119,7 @@ def main():
     parser.add_argument("--speed", type=float, default=1.0,
         help="Speed multiplier (default: 1.0)")
     parser.add_argument("--lang", default=None,
-        help="Language code (e.g. eng, fra, spa)")
+        help="Language tag (e.g. en, fr, es)")
     parser.add_argument("--pause", type=float, default=0.3,
         help="Silence between chunks/segments in seconds (default: 0.3)")
     args = parser.parse_args()
